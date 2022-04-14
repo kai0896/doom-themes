@@ -1,6 +1,6 @@
 # doom-themes
 
-Theme(s) for doom emacs created by my but based on existing doom themes.
+Theme(s) for doom emacs created by me but based on existing doom themes.
 
 ## Usage
 
