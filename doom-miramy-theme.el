@@ -37,7 +37,7 @@ determine the exact padding."
    (base6      '("#928374" "#909090" "brightblack")) ; gray
    (base7      '("#d5c4a1" "#cccccc" "brightblack")) ; fg2
    (base8      '("#fbf1c7" "#fbfbfb" "brightwhite")) ; fg0
-   (fg         '("#e8d6af" "#e8d6af" "brightwhite")) ; fg/fg1
+   (fg         '("#E5D5B4" "#E5D5B4" "brightwhite")) ; fg/fg1
    (fg-alt     '("#d8caac" "#d8caac" "brightwhite")) ; fg2
 
    (grey       '("#6b6554" "#6b6554" "brightblack"))   ; gray
@@ -51,11 +51,11 @@ determine the exact padding."
    (dark-green '("#678f67" "#678f67" "green"))         ; green
    (blue       '("#b6baaf" "#b6baaf" "brightblue"))    ; bright-blue
    (dark-blue  '("#458588" "#458588" "blue"))          ; blue
-   (cyan       '("#F4E4A5" "#F8EAB2" "brightcyan"))    ; bright-aqua
+   (cyan       '("#EEDBA3" "#F4E4A5" "brightcyan"))    ; bright-aqua
    (dark-cyan  '("#67a075" "#67a075" "cyan"))          ; aqua
 
    ;; face categories
-   (highlight      yellow)
+   (highlight      blue)
    (vertical-bar   base0)
    (selection      bg-alt2)
    (builtin        orange)
