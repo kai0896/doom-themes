@@ -51,7 +51,7 @@ determine the exact padding."
    (dark-green '("#678f67" "#678f67" "green"))         ; green
    (blue       '("#b6baaf" "#b6baaf" "brightblue"))    ; bright-blue
    (dark-blue  '("#458588" "#458588" "blue"))          ; blue
-   (cyan       '("#a5bdb2" "#a5bdb2" "brightcyan"))    ; bright-aqua
+   (cyan       '("#F4E4A5" "#F8EAB2" "brightcyan"))    ; bright-aqua
    (dark-cyan  '("#67a075" "#67a075" "cyan"))          ; aqua
 
    ;; face categories
