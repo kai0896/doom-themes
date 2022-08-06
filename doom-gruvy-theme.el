@@ -1,28 +1,28 @@
-;; doom-gruv-dark-theme.el --- inspired by morhetz Gruvbox -*- lexical-binding: t; no-byte-compile: t; -*-
+;; doom-gruvy-theme.el --- inspired by morhetz Gruvbox -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;; Compiler pacifier
 (defvar modeline-bg)
 
 ;;
-(defgroup doom-gruv-dark-theme nil
+(defgroup doom-gruvy-theme nil
   "Options for doom-gruv-dark."
   :group 'doom-themes)
 
-(defcustom doom-gruv-dark-padded-modeline doom-themes-padded-modeline
+(defcustom doom-gruvy-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
-  :group 'doom-gruv-dark-theme
+  :group 'doom-gruvy-theme
   :type '(choice integer boolean))
 
-(defcustom doom-gruv-dark-dark-variant nil
+(defcustom doom-gruvy-dark-variant nil
   "A choice of \"hard\" or \"soft\" can be used to change the
 background contrast. All other values default to \"medium\"."
-  :group 'doom-gruv-dark-theme
+  :group 'doom-gruvy-theme
   :type  'string)
 
 ;;
-(def-doom-theme doom-gruv-dark
+(def-doom-theme doom-gruvy
   "Dark theme with pastel 'retro groove' colors."
 
   ;; name        gui       256       16
@@ -40,11 +40,11 @@ background contrast. All other values default to \"medium\"."
    (base7      '("#c7bfaf" "#cccccc" "brightblack")) ; fg2
    (base8      '("#fbf1c7" "#fbfbfb" "brightwhite")) ; fg0
    (fg         '("#fbfbfb" "#dfdfdf" "brightwhite")) ; fg/fg1
-   (fg-alt     '("#cccccc" "#cccccc" "brightwhite")) ; fg2
+   (fg-alt     '("#eed1d9" "#cccccc" "brightwhite")) ; fg2
 
    ;; Standardized official colours from gruv-dark
-   (grey        '("#505050" "#909090" "brightblack"))   ; gray
-   (red         '("#c51804" "#e74c3c" "red"))           ; bright-red
+   (grey        '("#363636" "#909090" "brightblack"))   ; gray
+   (red         '("#b11864" "#e74c3c" "red"))           ; bright-red
    (magenta     '("#cc241d" "#cc241d" "magenta"))       ; red
    (violet      '("#d3869b" "#d3869b" "brightmagenta")) ; bright-purple
    (orange      '("#fe8019" "#fd971f" "orange"))        ; bright-orange
@@ -52,7 +52,7 @@ background contrast. All other values default to \"medium\"."
    (dark-yellow '("#d79921" "#fabd2f" "yellow"))        ; yellow
    (teal        '("#8ec07c" "#8ec07c" "green"))         ; bright-aqua
    (green       '("#a2a53c" "#b8bb26" "green"))         ; bright-green
-   (dark-green  '("#98971a" "#98971a" "green"))         ; green
+   ;; (dark-green  '("#98971a" "#98971a" "green"))         ; green
    (blue        '("#83a598" "#83a598" "brightblue"))    ; bright-blue
    (dark-blue   '("#458588" "#458588" "blue"))          ; blue
    (cyan        '("#93b686" "#8ec07c" "brightcyan"))    ; bright-aqua
@@ -61,17 +61,17 @@ background contrast. All other values default to \"medium\"."
    ;; face categories
    (highlight      yellow)
    (vertical-bar   bg-alt2)
-   (selection      grey)
+   (selection      bg-alt2)
    (builtin        orange)
    (comments       grey)
    (doc-comments   fg-alt)
    (constants      cyan)
-   (functions      green)
+   (functions      dark-blue)
    (keywords       red)
-   (methods        green)
+   (methods        dark-blue)
    (operators      fg)
    (type           yellow)
-   (strings        green)
+   (strings        violet)
    (variables      blue)
    (numbers        violet)
    (region         base1)
@@ -85,9 +85,9 @@ background contrast. All other values default to \"medium\"."
 
    ;; custom categories
    (-modeline-pad
-    (when doom-gruv-dark-padded-modeline
-      (if (integerp doom-gruv-dark-padded-modeline)
-          doom-gruv-dark-padded-modeline
+    (when doom-gruvy-padded-modeline
+      (if (integerp doom-gruvy-padded-modeline)
+          doom-gruvy-padded-modeline
         4)))
    (modeline-bg bg-alt2)
    (modeline-fg (doom-lighten fg-alt 0.25))
@@ -105,7 +105,7 @@ background contrast. All other values default to \"medium\"."
    ((line-number-current-line &override) :background base1 :foreground yellow)
    (isearch :foreground base0 :background orange)
    (lazy-highlight :background yellow :foreground base0 :distant-foreground base0 :bold bold)
-   ((link &override) :foreground violet)
+   ((link &override) :foreground fg-alt)
    (minibuffer-prompt :foreground cyan)
    (mode-line
     :background modeline-bg :foreground modeline-fg
@@ -127,17 +127,17 @@ background contrast. All other values default to \"medium\"."
    ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground keywords)
    ;;;; doom-emacs
-   (+workspace-tab-selected-face :background dark-green :foreground "white")
+   (+workspace-tab-selected-face :background cyan :foreground "white")
    ;;;; doom-modeline
    (doom-modeline-project-dir :bold t :foreground cyan)
-   (doom-modeline-buffer-path :inherit 'bold :foreground green)
+   (doom-modeline-buffer-path :inherit 'bold :foreground blue)
    (doom-modeline-buffer-file :inherit 'bold :foreground fg)
    (doom-modeline-buffer-modified :inherit 'bold :foreground yellow)
    (doom-modeline-error :background bg)
-   (doom-modeline-buffer-major-mode :foreground green :bold t)
+   (doom-modeline-buffer-major-mode :foreground blue :bold t)
    (doom-modeline-info :bold t :foreground cyan)
-   (doom-modeline-bar :background dark-green)
-   (doom-modeline-panel :background dark-green :foreground fg)
+   (doom-modeline-bar :background cyan)
+   (doom-modeline-panel :background cyan :foreground fg)
    ;;;; doom-themes
    (doom-themes-neotree-file-face :foreground fg)
    (doom-themes-neotree-hidden-file-face :foreground (doom-lighten fg-alt 0.25))
@@ -189,11 +189,11 @@ background contrast. All other values default to \"medium\"."
    (magit-diff-hunk-heading-highlight :background bg-alt2 :foreground fg)
    (magit-diff-context                :foreground base3 :foreground fg-alt)
    ;;;; markdown-mode
-   (markdown-header-face :inherit 'bold :foreground green)
+   (markdown-header-face :inherit 'bold :foreground blue)
    (markdown-header-delimiter-face :foreground orange)
    (markdown-blockquote-face :inherit 'italic :foreground grey)
    (markdown-list-face :foreground grey)
-   (markdown-url-face :foreground violet)
+   (markdown-url-face :foreground fg-alt)
    (markdown-pre-face  :foreground cyan)
    (markdown-link-face :inherit 'underline :foreground grey)
    ((markdown-code-face &override) :background (doom-lighten base2 0.045))
@@ -207,7 +207,7 @@ background contrast. All other values default to \"medium\"."
    ;;;; outline <built-in>
    ((outline-1 &override) :foreground violet)
    ((outline-2 &override) :foreground cyan)
-   ((outline-3 &override) :foreground green)
+   ((outline-3 &override) :foreground blue)
    ((outline-4 &override) :foreground (doom-lighten violet 0.2))
    ((outline-5 &override) :foreground (doom-lighten dark-cyan 0.25))
    ((outline-6 &override) :foreground (doom-lighten violet 0.4))
@@ -215,23 +215,23 @@ background contrast. All other values default to \"medium\"."
    ((outline-8 &override) :foreground (doom-lighten violet 0.6))
    ;;;; org <built-in>
    ((org-code &override) :foreground orange)
-   (org-date :foreground green)
+   (org-date :foreground blue)
    (org-document-info :foreground red)
    (org-document-title :foreground red)
    (org-drawer :foreground (doom-lighten cyan 0.4))
    (org-ellipsis :underline nil :foreground orange)
-   (org-formula :foreground green)
+   (org-formula :foreground blue)
    (org-meta-line :foreground comments)
    (org-list-dt :foreground cyan)
    ((org-quote &override) :inherit 'italic :foreground base7 :background org-quote)
    (org-table :foreground cyan)
    (org-tag :foreground (doom-darken comments 0.15) :weight 'normal)
-   (org-todo :foreground green :bold 'inherit)
+   (org-todo :foreground blue :bold 'inherit)
    (org-verbatim :foreground yellow)
    ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground orange)
    (rainbow-delimiters-depth-2-face :foreground cyan)
-   (rainbow-delimiters-depth-3-face :foreground magenta)
+   (rainbow-delimiters-depth-3-face :foreground dark-blue)
    (rainbow-delimiters-depth-4-face :foreground blue)
    ;;;; show-paren <built-in>
    ((show-paren-match &override) :foreground nil :background base5 :bold t)
@@ -249,7 +249,7 @@ background contrast. All other values default to \"medium\"."
    (web-mode-html-tag-bracket-face :foreground blue)
    (web-mode-html-tag-face         :foreground cyan)
    (web-mode-html-attr-name-face   :foreground cyan)
-   (web-mode-json-key-face         :foreground green)
+   (web-mode-json-key-face         :foreground blue)
    (web-mode-json-context-face     :foreground cyan)
    ;;;; which-key
    (which-func :foreground cyan)
