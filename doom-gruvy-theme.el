@@ -28,7 +28,7 @@ background contrast. All other values default to \"medium\"."
   ;; name        gui       256       16
   ((bg '("#000000")) ; bg0
    (bg-alt '("#080808")) ; bg_h
-   (bg-alt2    '("#111111" "#504945" "brown"      )) ; bg2 (for region, selection etc.)
+   (bg-alt2    '("#1b1b1b" "#504945" "brown"      )) ; bg2 (for region, selection etc.)
 
    (base0      '("#0d1011" "black"   "black"      )) ; (self-defined)
    (base1      '("#1d2021" "#1d1d1d" "brightblack")) ; bg0_h
@@ -42,7 +42,6 @@ background contrast. All other values default to \"medium\"."
    (fg         '("#fbfbfb" "#dfdfdf" "brightwhite")) ; fg/fg1
    (fg-alt     '("#eed1d9" "#cccccc" "brightwhite")) ; fg2
 
-   ;; Standardized official colours from gruv-dark
    (grey        '("#363636" "#909090" "brightblack"))   ; gray
    (red         '("#b11864" "#e74c3c" "red"))           ; bright-red
    (magenta     '("#cc241d" "#cc241d" "magenta"))       ; red
@@ -63,7 +62,7 @@ background contrast. All other values default to \"medium\"."
    (vertical-bar   bg-alt2)
    (selection      bg-alt2)
    (builtin        orange)
-   (comments       grey)
+   (comments       base5)
    (doc-comments   fg-alt)
    (constants      cyan)
    (functions      dark-blue)
@@ -91,7 +90,7 @@ background contrast. All other values default to \"medium\"."
         4)))
    (modeline-bg bg-alt2)
    (modeline-fg (doom-lighten fg-alt 0.25))
-   (modeline-inactive-bg (doom-darken modeline-bg 0.15))
+   (modeline-inactive-bg (doom-darken modeline-bg 0.25))
    (modeline-inactive-fg base6)
 
    (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))

@@ -61,7 +61,7 @@ background contrast. All other values default to \"medium\"."
    ;; face categories
    (highlight      yellow)
    (vertical-bar   bg-alt2)
-   (selection      grey)
+   (selection      base6)
    (builtin        orange)
    (comments       grey)
    (doc-comments   fg-alt)
